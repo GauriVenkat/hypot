@@ -56,3 +56,70 @@ def test_square_array():
 
     # Assert
     assert np.allclose(expected_output, output)
+    
+def test_square_root():
+    '''Tests for the square root function'''
+
+    # Arrange
+    test_variable_1 = 16
+    expected_output = 4
+
+    # Act
+    output = hypot.pythag.square_root(test_variable_1)
+
+    # Assert
+    assert output == expected_output
+    
+def test_square_root_array():
+    '''Tests for the square root function for an array'''
+
+    # Arrange
+    test_array_1 = np.array([16, 9, 64])
+    expected_output = np.array([4, 3, 8])
+
+    # Act
+    output = hypot.pythag.square_root(test_array_1)
+
+    # Assert
+    assert np.allclose(expected_output, output)
+    
+def test_square_root_2():
+    '''Tests for the square root function'''
+
+    # Arrange
+    test_variable_1 = 16
+    expected_output = np.sqrt(16)
+
+    # Act
+    output = hypot.pythag.square_root(test_variable_1)
+
+    # Assert
+    assert output == expected_output
+    
+def test_calc_hypot():
+    """Integration for hypot
+    """
+    # Arrange
+    test_variable_1 = 5.6
+    test_variable_2 = 7.8
+    expected_output = 9.60208
+
+    # Act
+    output = hypot.pythag.calc_hypot(test_variable_1, test_variable_2)
+
+    # Assert
+    assert np.allclose(expected_output, output, atol = 1e-3)
+    
+def test_calc_hypot():
+    """Integration for hypot
+    """
+    # Arrange
+    test_variable_1 = np.array([10, 30045, 6.9, 0.04])
+    test_variable_2 = np.array([23, 2400, 8.9, 0.34])
+    expected_output = np.array([25.08, 30140.7, 11.26, 0.34])
+
+    # Act
+    output = hypot.pythag.calc_hypot(test_variable_1, test_variable_2)
+
+    # Assert
+    assert np.allclose(expected_output, output, rtol= 1e-1)
